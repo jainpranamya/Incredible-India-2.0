@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["Email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+		<form name="myForm" action="testing.html" onsubmit="return validateForm();" method="post">
+								<p>NAME:
+									<br>
+									<input type="text" placeholder="Name" required name="Name" style="width:80%">
+								</p>
+								<p>EMAIL ID:
+									<br>
+									<input type="text" placeholder="Email" name="Email" style="width:80%">
+								</p>
+								<p>SPECIALITY:
+									<br>
+									<input type="text" placeholder="Comment" required name="Comment" style="width:80%">
+								</p>
+								<p>
+									<br>
+									<input type="file" name="pic" accept="image/*">
+								</p>
+								<br>
+								<button type="submit">Submit</button> 
+	</form>
+</body>
+</html>
